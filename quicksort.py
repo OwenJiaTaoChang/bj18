@@ -1,10 +1,11 @@
-def quicksort(array):
-    if len(array) < 2:
-        return array
+def quicksort(alist):
+    # 快速排序(重点掌握)
+    if len(alist) < 2:
+        return alist
     else:
-        pivot = array[0]
-        less = [i for i in array[1:] if i <= pivot]
-        greater = [j for j in array[1:] if j > pivot]
-        return quicksort(less) + [pivot] + quicksort(greater)
+        mid_value = alist[0]
+        low = [i for i in alist[1:] if i <= mid_value]
+        high = [j for j in alist[1:] if j > mid_value]
+        return quicksort(low) + [mid_value] + quicksort(high)
 
 print(quicksort([1,1,1,5,2,6,9,3]))
